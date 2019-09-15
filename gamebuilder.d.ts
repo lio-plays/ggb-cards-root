@@ -16,8 +16,10 @@ declare global {
     function getActorsWithTag(tag: string): ActorRef[];
     function getActorGroupDescription(pattern: string): string;
     function getActorsInGroup(pattern: string): ActorRef[];
+    //
     function getBoundsRadiusOuter(actor: ActorRef, includeVertical?: boolean): number;
     function getBoundsRadiusOuter(includeVertical?: boolean): number;
+    //
     function getPointBehind(dist: number, actor?: ActorRef): THREE.Vector3;
     function getCardTargetActor(propName: string, actionMessage: any):
         ActorRef | null;
@@ -47,4 +49,12 @@ declare global {
     function propActorGroup(prop: string);
     function propNumber(prop: string, val: number);
     function getDisplayName(actor: ActorRef): string;
+    function getActors(): ActorRef[];
+    function getParent(actor?: ActorRef): ActorRef | null;
+    function myself(): ActorRef;
+    function detachFromParentPlease(actor: ActorRef): void;
+    function setTintHex(colorHex: string): void;
+    function propActor(prop: string): ActorRef;
+    function overlapSphere(center: THREE.Vector3, radius: number): ActorRef;
+    function detachFromParentPlease(actor: ActorRef): void;
 }
