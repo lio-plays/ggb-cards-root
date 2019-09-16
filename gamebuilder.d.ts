@@ -25,6 +25,7 @@ declare global {
     function getDisplayName(actor: ActorRef): string;
     function getParent(actor?: ActorRef): ActorRef | null;
     function getPointBehind(dist: number, actor?: ActorRef): THREE.Vector3;
+    function getPos(actor?: ActorRef): THREE.Vector3;
     function getThrottle(actor: ActorRef): THREE.Vector3;
     function getTimeSinceReset();
     function getVar(name: string, actor: ActorRef): any;
@@ -39,6 +40,7 @@ declare global {
     function propEnum(name: string, defaultValue: string, allowedValues: string[], options?);
     function propNumber(prop: string, val: number);
     function send(actor: ActorRef, messageName: string, arg?: any): void;
+    function setKinematic(isKinematic: boolean);
     function setPos(worldPos: THREE.Vector3): void;
     function setTintHex(colorHex: string): void;
     function setVar(name: string, value: any): void;
